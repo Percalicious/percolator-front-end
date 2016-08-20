@@ -3,44 +3,108 @@ $lightbrown: #804800;
 $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
+$green: #84DB2E;
 
 
+@media screen and (max-width: 1000px){
+	h3{
+		font-size: 18px !important;
+	}
+	p{
+		font-size: 18px !important;
+	}
+	span{
+		font-size: 18px !important;
+	}
+	.statInfo {
+		font-size: 15px !important;
+		justify-content: flex-start !important;
+		padding-left: 2px;
+	}
+	.statLabel{
+		font-size: 13px !important;
+	}	
+}
 
+@media screen and (max-width: 750px){
+	h3{
+		font-size: 16px !important;
+	}
+	p{
+		font-size: 16px !important;
+	}
+	span{
+		font-size: 16px !important;
+	}
+	.statInfo {
+		font-size: 13px !important;
+		justify-content: flex-start !important;
+		padding-left: 2px;
+	}
+	.statLabel{
+		font-size: 11px !important;
+	}
+}
+
+@media screen and (max-width: 500px){
+	.guestStatsBox{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		overflow: auto;
+	}
+	.dividerDiv{
+		width: 0 !important;
+		height: 0 !important;
+	}
+	.personalInfoWrapper{
+		border-bottom: 3px solid $brown;
+		margin-bottom: 5px;
+		width: 100% !important;
+	}
+
+	.jobInfoWrapper{
+		padding-left: 0 !important;
+	}
+}
 
 .guestPage {
 	display: flex;
 	align-items: center;
-	flex-direction: column;	
+	flex-direction: column;
 }
 
 .guestStatsBox {
-	// border: solid red 1px;
-	display: flex;
-	justify-content: space-around;
-	background: $coffeewhite;
-	width: 70vw;
-	margin-top: 3vw;
-	margin-bottom: 1vw;
-	border-radius: 10px;
-	padding: 3vw;
+    display: flex;
+    justify-content: space-around;
+    background: #fff4e6;
+    width: 80vw;
+    margin: 3vw 0 1vw 0;
+    border-radius: 10px;
+    padding: 1.5vw 3vw;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
 }
 
+.infoHeader{
+	margin-bottom: 1vw;
+}
+
 .personalInfoWrapper{
-	// border: solid red 1px;
-	border-right: solid $brown 1px;
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	width: 30vw;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.dividerDiv{
+    width: 2px;
+	background: $brown;
 }
 
 .jobInfoWrapper {
-	// border: solid red 1px;
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	width: 30vw;	
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: auto;
 }
 
 .statInfoWrapper {
@@ -48,24 +112,30 @@ $darkorange: #F44B0C;
 }
 
 .statInfo {
-	// border: solid yellow 1px;
-	border-bottom: solid $lightbrown 1px; 
+	border-bottom: solid $lightbrown 1px;
 	display: flex;
 	align-items: flex-end;
-	justify-content: center;
-	font-size: 1.2vmax;
-	// width: 10vmax;
+	font-size: 1.4vw;
 	white-space: nowrap;
 	color: $orange;
+
 	height: 20px;
+	font-weight: bold;
 }
 
 
 .statLabel {
-	// border: solid green 1px; 
 	display: flex;
 	flex-direction: flex-start;
-	font-size: 0.8vmax;
+	font-size: 1vw;
+	color: $brown;
+
+}
+
+.chartLabel{
+	color: $brown;
+	font-size: 1.2vmax;
+	white-space: nowrap;
 }
 
 .animateDown { 
@@ -100,9 +170,99 @@ $darkorange: #F44B0C;
 .fadeInDown { 
     -webkit-animation-name: fadeInDown; 
     animation-name: fadeInDown; 
+
 }
 
-.givingChart {
-	// border: solid green 1px; 
-	margin: 2vw;
+.chartsContainer{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.chartContainer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	margin: 3vw;
+	width: 40vw;
+	min-width: 306px;
+	min-height: 168px;
+}
+
+.p2GCanvas {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    font-size: 2vw;
+    color: $orange;	
+}
+.tierBox{
+    position: absolute;
+    top: 42%;
+}
+
+.tierValue{
+
+    font-size: 2vw;
+	font-weight: bold;
+	margin-top: 0.8vw;
+	color: $orange;
+	text-align: center;
+}
+
+.tierValue-alt {
+	position: absolute;
+    // top: 41%;
+    // left: 42%;
+    font-size: 1.8vw;
+	font-weight: bold;
+	margin-top: 2.0vw;
+	color: $orange;	
+}
+
+.range {
+    position: absolute;
+    top: 56%;
+    left: 39.5%;
+    font-size: 1vw;
+    font-weight: bold;
+	color: $orange;
+}
+
+.accredited {
+	padding: 1.2vw;
+	text-align: center;
+	color: white;
+
+	font-size: 1.5vmax;
+
+	background: $green;
+	white-space: nowrap;
+	margin-bottom: 1vw;
+	border-radius: 1vw;
+}
+
+.cashOnHandBox{
+    background: white;
+    border: 18px solid $green;
+    border-radius: 45px;
+    width: 60%;
+    height: 95%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	p{
+		color: $orange;
+		text-align: center;
+		font-size: 3vw;
+		font-weight: bold;
+	}
+}
+
+.detailsBox{
+	margin-left: 5px;
 }

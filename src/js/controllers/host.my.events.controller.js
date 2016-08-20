@@ -34,7 +34,6 @@ function HostMyEventsController ($state, $scope, $http, SERVER, $cookies, $locat
   }
 
   function eventDetails(eventID) {
-    console.log(eventID);
     $location.url('host/my-events/' + eventID);
   }
 

@@ -22,7 +22,7 @@ h3 {
 	color: $orange;
     text-align: left;
     font-weight: bold !important;
-    font-size: 1.5vw !important;
+    font-size: 1.5vw;
 }
 
 h4 {
@@ -66,11 +66,6 @@ h4 {
 }
 
 
-.contactContainer {
-	display: flex;
-	justify-content:center;
-}
-
 .media{
 	display: flex;
 	flex-direction: column;
@@ -92,20 +87,6 @@ h4 {
 	// background: #F2EFDF;
 }
 
-.attending {
-	color: green;
-	font-weight: bold;
-}
-
-.declined {
-	color: red;
-	font-weight: bold;
-}
-
-.maybe {
-	color: darken(gold, 20%);
-	font-weight: bold;
-}
 
 
 
@@ -142,4 +123,7 @@ h4 {
     animation-name: fadeInRight;
 }
 
-
+footer {
+	text-align: center;
+	padding: 30px;
+}

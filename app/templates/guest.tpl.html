@@ -1,97 +1,139 @@
 <div class="guestPage">
-
 	<div class="guestStatsBox animateDown fadeInDown">
-	<div class="personalInfoWrapper">
-			<h3>Personal Info:</h3>
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-					{{vm.profile.fullname}}
-					</div>
-						<span class="statLabel">Full Name</span>
+		<div class="personalInfoWrapper">
+			<h3 class="infoHeader">Personal Info:</h3>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+				{{vm.profile.fullname}}
 				</div>
-
-				<div class="statInfoWrapper">
-					<div class="statInfo maritalInfo">
-					{{vm.profile.email}}
-					</div>
-						<span class="statLabel">Email</span>
+				<span class="statLabel">Full Name</span>
+			</div>
+			<div class="statInfoWrapper">
+				<div class="statInfo maritalInfo">
+				{{vm.profile.email}}
 				</div>
-
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-					{{vm.profile.kids}}
-					</div>
-						<span class="statLabel">Has kids</span>
+				<span class="statLabel">Email</span>
+			</div>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+				{{vm.profile.kids}}
 				</div>
-
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-					{{vm.profile.spousename}}
-					</div>
-						<span class="statLabel">Spouse Name</span>
+				<span class="statLabel">Has Kids</span>
+			</div>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+				{{vm.profile.spouseName}}
 				</div>
-
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-						{{vm.profile.age}}
-					</div>
-						<span class="statLabel">Age</span>
+				<span class="statLabel">Spouse Name</span>
+			</div>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+					{{vm.profile.age}}
 				</div>
-
-				<div class="statInfoWrapper">
-					<div class="statInfo">
-						{{vm.profile.city}}
-					</div>
-						<span class="statLabel">Lives In</span>
+				<span class="statLabel">Age</span>
+			</div>
+			<div class="statInfoWrapper">
+				<div class="statInfo">
+					{{vm.profile.city}}, {{vm.profile.state}}
 				</div>
-	</div>
-
+				<span class="statLabel">Lives In</span>
+			</div>
+		</div>
+		<div class="dividerDiv">
+		</div>
 		<div class="jobInfoWrapper">
-			<h3>Job Info:</h3>
+			<div class="accredited" ng-show="vm.profile.accreditedInvestor">
+				Accredited Investor
+			</div>		
+			<h3 class="infoHeader">Job Info:</h3>
 				<div class="statInfoWrapper">
 					<div class="statInfo">
 					{{vm.profile.coname1}}
 					</div>
-						<span class="statLabel">Company Name</span>
+					<span class="statLabel">Company 1 Name</span>
 				</div>
-
 				<div class="statInfoWrapper">
 					<div class="statInfo maritalInfo">
 					{{vm.profile.title1}}
 					</div>
-						<span class="statLabel">Title</span>
+					<span class="statLabel">Title</span>
 				</div>
-
-				<br>
-
 				<div class="statInfoWrapper">
 					<div class="statInfo">
 					{{vm.profile.coname2}}
 					</div>
-						<span class="statLabel">Company Name</span>
+					<span class="statLabel">Company 2 Name</span>
 				</div>
-
 				<div class="statInfoWrapper">
 					<div class="statInfo maritalInfo">
 					{{vm.profile.title2}}
 					</div>
-						<span class="statLabel">Title</span>
+					<span class="statLabel">Title</span>
 				</div>
-
 		</div>
+	</div>
+	<div class=chartsContainer>
+		<div class="chartContainer">
+			<h3><span class="chartLabel">Net Worth: </span>{{vm.profile.netWorthRange}}</h3>
+			<canvas id="netWorth" class="worthCanvas chart-doughnut"
+			  chart-data="netWorthData" chart-labels="netWorthLabels">
+			</canvas>
 
+			<div class="tierBox">
+				<p class="tierValue"><span class="chartLabel">Tier</span></p>
+				<p class="tierValue">{{vm.profile.netWorthTier}}/12</p>
+			</div>
+		</div>
+		<div class="chartContainer">
+			<h3><span class="chartLabel">Cash on Hand:</span></h3>
+			<div class="cashOnHandBox">
+				<p>{{vm.profile.cashOnHand}}</p>
+			</div>
+		</div>
+		<div class="chartContainer">
+			<h3><span class="chartLabel">Propensity to Give (P2G) Score: </span>{{vm.profile.p2GText}}</h3>
+			<canvas id="p2G" class="p2GCanvas chart-pie"
+			  chart-data="p2GData" chart-labels="p2GLabels" >
+			</canvas>
+		</div>
+		<div class="chartContainer">
+			<h3><span class="chartLabel">Gift Capacity: </span>{{vm.profile.giftCapacity}}</h3>
+			<canvas id="giftCapacity" class="giftCapacityCanvas chart-doughnut"
+			  		chart-data="giftCapacityData" chart-labels="giftCapacityLabels" >
+			</canvas>
+			<div class="tierBox">
+				<p class="tierValue"><span class="chartLabel">Tier</span></p>
+				<p class="tierValue">{{vm.profile.giftCapacityTier}}/20</p>
+			</div>
+		</div>
+		<div class="chartContainer">
+			<h3><span class="chartLabel">Income: </span>{{vm.profile.incomeRange}}</h3>
+				<canvas id="income" class="incomeCanvas chart-doughnut"
+				  		chart-data="incomeData" chart-labels="incomeLabels" >
+				</canvas>
+			<div class="tierBox">
+				<p class="tierValue"><span class="chartLabel">Tier</span></p>
+				<p class="tierValue">{{vm.profile.incomeTier}}/6</p>
+			</div>
+		</div>
+		<div class="chartContainer">
+			<h3><span class="chartLabel">Real Estate Value: </span>{{vm.profile.realEstateTotalVal}}</h3>
+				<canvas id="realEstate" class="realEstateCanvas chart-doughnut"
+				  chart-data="realEstateData" chart-labels="realEstateLabels" >
+				</canvas>
+			<div class="tierBox">
+				<p class="tierValue"><span class="chartLabel">Tier</span></p>
+				<p class="tierValue">{{vm.profile.realEstateTier}}/8</p>
+			</div>
+		</div>			
+	</div>
+	<div class="detailsBox">
+		<h3><span class="chartLabel">Properties Owned:  </span> {{vm.profile.numberRealEstateProperties}}</h3>
+		<h3><span class="chartLabel">Business Ownership:  </span>{{vm.profile.businessOwnership}}</h3>
+		<h3><span class="chartLabel">Business Sales Volume:  </span>{{vm.profile.businessSalesVolume}}</h3>
+		<h3><span class="chartLabel">Influence Rating:  </span>{{vm.profile.influenceRating}}</h3>
+		<h3><span class="chartLabel">Total Stock:  </span>{{vm.profile.totalStock}}</h3>
+		<h3><span class="chartLabel">Total Pensions:  </span>{{vm.profile.totalPensions}}</h3>
+		<h3><span class="chartLabel">Investable Assets:  </span>{{vm.profile.investableAssets}}</h3>
 	</div>
 </div>
-
-<div class="givingChart">
-	<h3>Giving Stats:</h3>
-	<canvas id="base" 
-			class="chart-horizontal-bar"
-	  			chart-data="vm.data" 
-	  			chart-labels="vm.labels" 
-	  			chart-colors="vm.colors">
-	</canvas> 
-</div>
-
-
-

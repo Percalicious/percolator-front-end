@@ -2,6 +2,7 @@ $coffeewhite: #fff4e6;
 $brown: #673A00;
 $orange:  #e78200;
 $darkorange: #F44B0C;
+$lightbrown: #804800;
 
 
 .creatAccountBox {
@@ -14,8 +15,6 @@ $darkorange: #F44B0C;
     padding: 5vw;
     border-radius: 10px;
     background: $coffeewhite;
-    // background-image: url("../images/old-white-paper.jpg");
-    // background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
 }

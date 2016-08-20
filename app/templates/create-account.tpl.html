@@ -4,29 +4,29 @@
 
    <h3>Account Details:</h3>
         <label>
-          <input type="text" 
+          <input type="text"
                  ng-model="user.first_name"
                  required>
           <div class="label-text">First Name:</div>
         </label>
         <label>
-          <input type="text" 
+          <input type="text"
                  ng-model="user.last_name" required>
           <div class="label-text">Last Name:</div>
         </label>
         <label>
-          <input type="text" 
+          <input type="text"
                  ng-model="user.email" required>
           <div class="label-text">Email:</div>
                <!--  <span class="help is-danger">This email is invalid</span> -->
         </label>
         <label>
-          <input type="password" 
+          <input type="password"
                  ng-model="user.password" required>
           <div class="label-text">Password:</div>
         </label>
         <br>
-        
+
 <!--     <p class="control has-icon has-icon-left">
       <input class="input" type="text" ng-model="user.first_name" placeholder="First Name">
         <i class="fa fa-user" aria-hidden="true"></i>
@@ -54,27 +54,27 @@
     <br>
       <h3>Personal Details:</h3>
        <label>
-          <input type="tel" 
+          <input type="tel"
                  ng-model="user.home_number">
           <div class="label-text">Home phone:</div>
         </label>
        <label>
-          <input type="tel" 
+          <input type="tel"
                  ng-model="user.mobile_number">
           <div class="label-text">Mobile phone:</div>
         </label>
        <label>
-          <input type="tel" 
+          <input type="text"
                  ng-model="user.street">
           <div class="label-text">Address:</div>
         </label>
        <label>
-          <input type="tel" 
+          <input type="text"
                  ng-model="user.street_2">
           <div class="label-text">Address-alt:</div>
         </label>
        <label>
-          <input type="tel" ng-model="user.city">
+          <input type="text" ng-model="user.city">
           <div class="label-text">City:</div>
         </label>
         <br>
@@ -134,7 +134,7 @@
       </select>
 
       <label>
-          <input type="tel" 
+          <input type="text"
                  ng-model="user.post_code">
           <div class="label-text">zip:</div>
         </label>
@@ -143,8 +143,8 @@
 
         <h3>Organization Details:</h3>
       <label>
-          <input type="tel" 
-                 ng-model="user.organization" 
+          <input type="text" 
+                 ng-model="user.organization"
                  required>
           <div class="label-text">Organization Name:</div>
       </label>
@@ -160,9 +160,9 @@
       <br>
 
     <div class="photoUploadBox">
-      <label class="photo-label" 
+      <label class="photo-label"
              ng-click="vm.uploadImage()">Profile photo: </label>
-      <a class="button is-primary is-outlined" 
+      <a class="button is-primary is-outlined"
          ng-click="vm.uploadImage()">Upload Image</a>
     </div>
     <br>
@@ -177,7 +177,7 @@
     <br>
 
     <p class="control">
-      <button type="submit" 
+      <button type="submit"
               class="button is-primary">Submit</button>
       <button class="button is-link">Cancel</button>
     </p>
@@ -186,5 +186,3 @@
   </form>
 
 </div>
-
-

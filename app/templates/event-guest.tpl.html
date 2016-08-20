@@ -3,56 +3,145 @@
 	    <article class="media">
 	      <div class="media-left">
 	        <figure class="image is-128x128">
-	          <img src="http://placekitten.com/250/250" alt="Image">
+	          <img src="{{vm.event.photo_url || 'images/JavaHuddleLogo.png'}}" alt="Image">
 	        </figure>
 	      </div>
 	      <div class="media-content">
 	        <div class="content">
 	          <p>
-	            <strong>A Night with Vision City</strong>
+	            <strong>{{vm.event.title}}</strong>
 	            <br>
 	            <br>
-	           <small><strong>Location:</strong> Strongbox West</small>
+	           <small><strong>Location:</strong> {{vm.event.title}}</small>
 	           <br>
 	           <small><strong>Address:</strong></small>
 	           <br>
-	           <small>Street 1</small>
+	           <small>{{vm.event.street}}</small>
 	           <br>
-	           <small>Street2</small>
+	           <small>{{vm.event.street_2}}</small>
 	           <br>
-	           <small>City, </small><small>State </small><small>55555</small>
+	           <small>{{vm.event.city}}, </small><small>{{vm.event.state}} </small><small>{{vm.event.post_code}}</small>
 	           <br>
 	           <small><strong>Date and Time:</strong></small>
 	           <br>
-	           <small>Friday, June 3, 2016: 7pm-9pm</small>
+	           <small>{{vm.event.date}}: {{vm.event.start_time}}-{{vm.event.end_time}}</small>
 	           <br>
 	           <small><strong>RSVPs:</strong></small>
 	          <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
 	           <br>
-	           <small><strong>Organization:</strong> Vision City</small>
+	           <small><strong>Organization:</strong> {{vm.event.organization}}</small>
 	           <br>
-	           <small><strong>Category:</strong> Nonprofit</small>
+	           <small><strong>Category:</strong> {{vm.event.category}}</small>
 	           <br>
 	            <small><strong>Event Description:</strong></small>
 	            <br>
-	            <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</small>	           
+	            <small>{{vm.event.message}}</small>
 	          </p>
 				<div class="attendingContainer">
+					<form ng-submit="vm.submitRSVP(egInfo, guestInfo)">
 					<small><strong>Attending:</strong></small>
 					  	<p class="control">
 					  <label class="radio">
-					    <input type="radio" name="question">
+					    <input type="radio" name="question" ng-model="egInfo.rsvp" value="Yes">
 					    Yes
 					  </label>
 					  <label class="radio">
-					    <input type="radio" name="question">
+					    <input type="radio" name="question" ng-model="egInfo.rsvp" value="No">
 					    No
 					  </label>
 					  <label class="radio">
-					    <input type="radio" name="question">
+					    <input type="radio" name="question" ng-model="egInfo.rsvp" value="Maybe">
 					    Maybe
 					  </label>
+						<label>
+							<input type="text" ng-model="egInfo.rsvp_details">
+							<div class="label-text">Message to host and/or RSVP details:</div>
+						</label>
+
+						<label>
+							<input type="text" ng-model="guestInfo.street">
+							<div class="label-text">Address:</div>
+						</label>
+						<label>
+							<input type="text" ng-model="guestInfo.street_2">
+							<div class="label-text">Address-alt:</div>
+						</label>
+						<label>
+							<input type="text" ng-model="guestInfo.city">
+							<div class="label-text">City:</div>
+						</label>
+						<select name="state"
+										ng-model="guestInfo.state"
+										placeholder="State">
+				          <option value="AL">Alabama</option>
+									<option value="AK">Alaska</option>
+									<option value="AZ">Arizona</option>
+									<option value="AR">Arkansas</option>
+									<option value="CA">California</option>
+									<option value="CO">Colorado</option>
+									<option value="CT">Connecticut</option>
+									<option value="DE">Delaware</option>
+									<option value="DC">District of Columbia</option>
+									<option value="FL">Florida</option>
+									<option value="GA">Georgia</option>
+									<option value="HI">Hawaii</option>
+									<option value="ID">Idaho</option>
+									<option value="IL">Illinois</option>
+									<option value="IN">Indiana</option>
+									<option value="IA">Iowa</option>
+									<option value="KS">Kansas</option>
+									<option value="KY">Kentucky</option>
+									<option value="LA">Louisiana</option>
+									<option value="ME">Maine</option>
+									<option value="MD">Maryland</option>
+									<option value="MA">Massachusetts</option>
+									<option value="MI">Michigan</option>
+									<option value="MN">Minnesota</option>
+									<option value="MS">Mississippi</option>
+									<option value="MO">Missouri</option>
+									<option value="MT">Montana</option>
+									<option value="NE">Nebraska</option>
+									<option value="NV">Nevada</option>
+									<option value="NH">New Hampshire</option>
+									<option value="NJ">New Jersey</option>
+									<option value="NM">New Mexico</option>
+									<option value="NY">New York</option>
+									<option value="NC">North Carolina</option>
+									<option value="ND">North Dakota</option>
+									<option value="OH">Ohio</option>
+									<option value="OK">Oklahoma</option>
+									<option value="OR">Oregon</option>
+									<option value="PA">Pennsylvania</option>
+									<option value="RI">Rhode Island</option>
+									<option value="SC">South Carolina</option>
+									<option value="SD">South Dakota</option>
+									<option value="TN">Tennessee</option>
+									<option value="TX">Texas</option>
+									<option value="UT">Utah</option>
+									<option value="VT">Vermont</option>
+									<option value="VA">Virginia</option>
+									<option value="WA">Washington</option>
+									<option value="WV">West Virginia</option>
+									<option value="WI">Wisconsin</option>
+									<option value="WY">Wyoming</option>
+						</select>
+						<label>
+							<input type="text" ng-model="guestInfo.post_code">
+							<div class="label-text">Zip:</div>
+							<label>
+								 <input type="tel" ng-model="guestInfo.home_number">
+								 <div class="label-text">Home phone:</div>
+							 </label>
+							<label>
+								 <input type="tel" ng-model="guestInfo.mobile_number">
+								 <div class="label-text">Mobile phone:</div>
+							 </label>
+
 					</p>
+					<p>
+					<button type="submit" class="button is-primary">Submit RSVP</button>
+					</p>
+				</form>
 				</div>
 	        </div>
 	      </div>
@@ -79,7 +168,7 @@
 			        	<button class="delete"></button>
 			      	</div>
 			    </article>
-			</div>		
+			</div>
 		</div>
 		<div class="RSVPNoList">
 			<p class="declined animated fadeInRight">
@@ -100,7 +189,7 @@
 			        	<button class="delete"></button>
 			      	</div>
 			    </article>
-			</div>				
+			</div>
 		</div>
 		<div class="RSVPMaybeList">
 			<p class="maybe animated fadeInRight">
@@ -121,12 +210,9 @@
 			        	<button class="delete"></button>
 			      	</div>
 			    </article>
-			</div>				
+			</div>
 		</div>
 	</div>
 
 
 </div>
-
-
- 

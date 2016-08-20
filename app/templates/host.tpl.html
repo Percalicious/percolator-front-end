@@ -1,13 +1,12 @@
 <div class="hostPage">
 
-  <div class="hostInfoWrapper">
+  <div class="hostInfoWrapper animated fadeInDown">
     <div class="hostPhotoBox">
         <div class="hostPhoto">
-          <img src="{{vm.user.photo_url}}" alt="Image">
+          <img src="{{vm.user.photo_url  || 'images/coffeeCupVector.png'}}" alt="Image">
         </div>
     </div>
-
-
+    
         <div class="hostDetailsWrapper1">
            <h3>Personal Info:</h3>
 
@@ -20,21 +19,21 @@
 
           <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
-           {{vm.user.email}}  
+           {{vm.user.email}}
             </div>
               <span class="hostDetailLabel">Email</span>
           </div>
 
          <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
-           {{vm.user.home_number}}  
+           {{vm.user.home_number}}
             </div>
               <span class="hostDetailLabel">Home Phone:</span>
           </div>
 
          <div class="hostDetailWrapper">
             <div class="hostDetailInfo">
-           {{vm.user.mobile_number}} 
+           {{vm.user.mobile_number}}
             </div>
               <span class="hostDetailLabel">Mobile Phone:</span>
           </div>
@@ -45,15 +44,15 @@
              {{vm.user.street}}<br>
              {{vm.user.street_2}}<br>
              {{vm.user.city}}, {{vm.user.state}} {{vm.user.post_code}} <br>
-             </div>
+            </div>
         </div>
 
         <div class="hostDetailsWrapper2">
-          <h3>Organiztion Info:</h3>
-    
+          <h3>Organization Info:</h3>
+
              <div class="hostDetailWrapper">
                 <div class="hostDetailInfo">
-               {{vm.user.organization}} 
+               {{vm.user.organization}}
                 </div>
                   <span class="hostDetailLabel">Name:</span>
               </div>
@@ -69,27 +68,28 @@
   </div>
 
 
-  <div class="tabs is-boxed">
-    <ul>
-      <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
-        <a href="/#/host/my-events">
-          <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-          <span>My Events</span>
-        </a>
-      </li>
-      <li ng-class="{'is-active': vm.active2 }" ng-click="vm.active2=true; vm.active1=false;">
-        <a href="/#/host/my-contacts">
-          <span class="icon is-small"><i class="fa fa-vm.users" aria-hidden="true"></i></span>
-          <span>My Contacts</span>
-        </a>
-      </li>
-      <li>
-        <a href="/#/event-create">
-          <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></i></span>
-          <span>Create Event</span>
-        </a>
-      </li>
-    </ul>
+  <div class="tabs is-boxed animated fadeIn">
+      <ul>
+        <li ng-class="{ 'is-active': vm.active1 }" ng-click="vm.active1=true; vm.active2=false;">
+          <a href="/#/host/my-events">
+            <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            <span>My Events</span>
+          </a>
+        </li>
+        <li ng-class="{'is-active': vm.active2 }" ng-click="vm.active2=true; vm.active1=false;">
+          <a href="/#/host/my-contacts">
+            <span class="icon is-small"><i class="fa fa-vm.users" aria-hidden="true"></i></span>
+            <span>My Contacts</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/event-create">
+            <span class="icon is-small"><i class="fa fa-calendar" aria-hidden="true"></i></i></span>
+            <span>Create Event</span>
+          </a>
+        </li>
+      </ul>
   </div>
+
   <div ui-view></div>
 </div>

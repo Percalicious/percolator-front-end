@@ -133,8 +133,7 @@
       <h3>Event Description:</h3>
         <label>
           <textarea type="text"
-                     ng-model="eventInfo.message"
-                     required>
+                     ng-model="eventInfo.message">
           <div class="label-text"></div>
         </textarea>
         <br>
@@ -155,8 +154,7 @@
 
         <label>
           <input type="number"
-                 ng-model="eventInfo.suggested_donation"
-                 required>
+                 ng-model="eventInfo.suggested_donation">
           <div class="label-text">Suggested Donation:</div>
         </label>
         <br>
@@ -197,7 +195,7 @@
 
               <br>
       <p class="control">
-          <button class="button is-primary is-outlined" type="submit" ng-click="vm.submitStateChange()">Submit</button>
+          <button class="button is-primary is-outlined" type="submit">Submit</button>
           <button href="/#/host"
                   class="button is-link">Cancel</button></a>
       </p>

@@ -1,4 +1,4 @@
-function CreateAccountController($http, SERVER, $state) {
+function CreateAccountController($http, SERVER, $state, $cookies) {
 
     // Sets up this as vm.
     let vm = this;
@@ -15,11 +15,39 @@ function CreateAccountController($http, SERVER, $state) {
         $http.post(SERVER.URL + 'register', user).then(function successCallback(res) {
                 if (res.status == 200) {
                     alert("200 OK");
-                    $state.go('root.home');
+                    $http.post(SERVER.URL + 'login', user).then(function successCallback(res) {
+                        if (res.status == 200) {
+                            alert("200 OK");
+                            $cookies.put('access_token', res.data.access_token);
+                            $state.go('root.host');
+                        }
+                    },
+                    function errorCallback(res) {
+                        if (res.status == 401) {
+                            alert("401 ERROR!!!!!");
+                        } else if (res.status == 403) {
+                            alert("403 Forbidden");
+                        }
+
+                    });                    
                 }
                 else if (res.status == 201) {
-                  alert(res.status + " Account Created Successfully!");
-                  $state.go('root.home')
+                    alert(res.status + " Account Created Successfully!");
+                    $http.post(SERVER.URL + 'login', user).then(function successCallback(res) {
+                        if (res.status == 200) {
+                            alert("200 OK");
+                            $cookies.put('access_token', res.data.access_token);
+                            $state.go('root.host');
+                        }
+                    },
+                    function errorCallback(res) {
+                        if (res.status == 401) {
+                            alert("401 ERROR!!!!!");
+                        } else if (res.status == 403) {
+                            alert("403 Forbidden");
+                        }
+
+                    });
                 }
             },
             function errorCallback(res) {
@@ -40,5 +68,5 @@ function CreateAccountController($http, SERVER, $state) {
 
 }
 
-CreateAccountController.$inject = ['$http', 'SERVER', '$state'];
+CreateAccountController.$inject = ['$http', 'SERVER', '$state', '$cookies'];
 export { CreateAccountController };

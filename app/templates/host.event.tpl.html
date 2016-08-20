@@ -1,49 +1,122 @@
 <div class="eventHostContainer">
-	<div class="box">
-	    <article class="media">
-	      <div class="media-left">
-	        <figure class="image is-128x128">
-	          <img src="{{vm.event.photo_url}}" alt="Image">
-	        </figure>
-	      </div>
-	      <div class="media-content">
-	        <div class="content">
-	          <p>
-	            <strong>{{vm.event.title}}</strong>
+	<div class="singleEventBox">
+
+      <div class="subInfoWrapper">
+          <div class="eventPhotoBox">
+            <div class="eventPhoto">
+              <img src="{{vm.event.eventInfo.photo_url  || 'images/coffeeCupVector'}}" alt="Image">
+           </div>
+          </div>
+
+        <div class="infoWrapper1">
+            <h3>Event Info:</h3>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo">
+                {{vm.event.eventInfo.title}}
+                </div>
+                  <span class="eventLabel">Event Name</span>
+              </div>
+				<br>
+                 <h4>Address:</h4>
+                 <div class="addressWrapper">
+                   {{vm.event.eventInfo.street}}<br>
+                   {{vm.event.eventInfo.street_2}}<br>
+                   {{vm.event.eventInfo.city}}, {{vm.event.eventInfo.state}} {{vm.event.eventInfo.post_code}} <br>
+                  </div>
+			  <br>
+                <h4>Date/Time:</h4>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{vm.event.eventInfo.date}}
+                </div>
+                  <span class="eventLabel">Event Date</span>
+              </div>
+
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{vm.event.eventInfo.start_time}}
+                </div>
+                  <span class="eventLabel">Start Time</span>
+              </div>
+
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo dateTime">
+                {{vm.event.eventInfo.end_time}}
+                </div>
+                  <span class="eventLabel">End Time</span>
+              </div>
+          </div>
+
+
+         <div class="infoWrapper2">
+            <h3>RSVPs:</h3>
+             <h4>{{vm.rsvp.invites}} invited</h4>
+             <br>
+           
+              <span class="attending">{{vm.rsvp.yes}} attending</span>
+              <span class="declined">{{vm.rsvp.no}} declined</span>
+              <span class="maybe">{{vm.rsvp.maybe}} maybe</span>
+              <span class="noResponse">{{vm.rsvp.not_responded}} no response</span>
+             <br>
+
+             <h3>Organization:</h3>
+              <div class="eventCardInfoWrapper">
+                <div class="eventInfo">
+                {{vm.event.eventInfo.organization}}
+                </div>
+                  <span class="eventLabel">Name</span>
+              </div>
+
+               <div class="eventCardInfoWrapper">
+                <div class="eventInfo">
+                {{vm.event.eventInfo.category}}
+                </div>
+                  <span class="eventLabel">Category</span>
+              </div>   
+                <div class="eventDesriptionWrapper">
+                  <span class="eventDesription">{{vm.event.eventInfo.message}}</span>
+              </div>          
+
+          </div>
+
+	</div>
+
+          <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>
+  </div>
+ 	        <!--  =========================== -->
+<!-- 	          <p>
+	            <strong>{{vm.event.eventInfo.title}}</strong>
 	            <br>
 	            <br>
-	           <small><strong>Location:</strong> {{vm.event.title}}</small>
+	           <small><strong>Location:</strong> {{vm.event.eventInfo.title}}</small>
 	           <br>
 	           <small><strong>Address:</strong></small>
 	           <br>
-	           <small>{{vm.event.street}}</small>
+	           <small>{{vm.event.eventInfo.street}}</small>
 	           <br>
-	           <small>{{vm.event.street_2}}</small>
+	           <small>{{vm.event.eventInfo.street_2}}</small>
 	           <br>
-	           <small>{{vm.event.city}}, </small><small>{{vm.event.state}} </small><small>{{vm.event.post_code}}</small>
+	           <small>{{vm.event.eventInfo.city}}, </small><small>{{vm.event.eventInfo.state}} </small><small>{{vm.event.eventInfo.post_code}}</small>
 	           <br>
 	           <small><strong>Date and Time:</strong></small>
 	           <br>
-	           <small>{{vm.event.date}}: {{vm.event.start_time}}-{{vm.event.end_time}}</small>
+	           <small>{{vm.event.eventInfo.date}}: {{vm.event.eventInfo.start_time}}-{{vm.event.eventInfo.end_time}}</small>
+	           <br> -->
+<!-- 	           <small><strong>RSVPs:</strong></small>
+	          <small class="invites">{{vm.rsvp.invites}} invited</small> | <small class="attending">{{vm.rsvp.yes}} attending</small> | <small class="declined">{{vm.rsvp.no}} declined</small> | <small class="maybe">{{vm.rsvp.maybe}} maybe</small> | <small class="notresponded">{{vm.rsvp.not_responded}} not responded</small> -->
+<!-- 	           <br>
+	           <small><strong>Organization:</strong> {{vm.event.eventInfo.organization}}</small>
 	           <br>
-	           <small><strong>RSVPs:</strong></small>
-	          <small>10 invited</small> | <small class="attending">6 attending</small> | <small class="declined">3 declined</small> | <small class="maybe">1 maybe</small>
-	           <br>
-	           <small><strong>Organization:</strong> {{vm.event.organization}}</small>
-	           <br>
-	           <small><strong>Category:</strong> {{vm.event.category}}</small>
+	           <small><strong>Category:</strong> {{vm.event.eventInfo.category}}</small>
 	           <br>
 	            <small><strong>Event Description:</strong></small>
 	            <br>
-	            <small>{{vm.event.message}}</small>
-	          </p>
-	        </div>
-	      </div>
-				<div class="media-right">
-          <button class="delete" ng-click="vm.deleteEvent(event.id)"></button>
-        </div>
-	    </article>
-  	</div>
+	            <small>{{vm.event.eventInfo.message}}</small>
+	          </p> -->
+	     
+
+
+
   	<div class="inviteButtonRow">
   		<button class="Btn button is-primary is-outlined" ng-click="vm.showInviteNew(); vm.hideInviteMyContacts()">
   			Invite New
@@ -75,7 +148,7 @@
   	</div>
 
 	<div class="RSVPContainer">
-		<div class="RSVPYesList">
+		<div class="RSVPYesList" ng-repeat="yesGuest in vm.yesGuests track by $index">
 			<p class="attending animated fadeInRight">
 				Yes
 			</p>
@@ -84,19 +157,31 @@
 			      	<div class="media-content">
 				        <div class="content">
 				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+										<strong>{{yesGuest.first_name}} {{yesGuest.last_name}}</strong> <small>{{yesGuest.email}}</small>
 				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+				      			Mobile Number: {{yesGuest.mobile_number}}
+										<br>
+										Home Number: {{yesGuest.home_number}}
 				          </p>
 				        </div>
 			      	</div>
+							<br>
 			      	<div class="media-right">
+								<button class="Btn button is-primary is-outlined">
+					  			View Contact Details
+					  		</button>
+								<button class="Btn button is-primary is-outlined">
+									View Wealth Report
+								</button>
+							</div>
+							<br>
+							<div>
 			        	<button class="delete"></button>
 			      	</div>
 			    </article>
 			</div>
 		</div>
-		<div class="RSVPNoList">
+		<div class="RSVPNoList" ng-repeat="noGuest in vm.noGuests track by $index">
 			<p class="declined animated fadeInRight">
 			No
 			</p>
@@ -105,19 +190,28 @@
 			      	<div class="media-content">
 				        <div class="content">
 				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
+				            <strong>{{noGuest.first_name}} {{noGuest.last_name}}</strong> <small>{{noGuest.email}}</small>
 				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+				      			Mobile Number: {{noGuest.mobile_number}}
+										<br>
+										Home Number: {{noGuest.home_number}}
 				          </p>
 				        </div>
 			      	</div>
-			      	<div class="media-right">
-			        	<button class="delete"></button>
-			      	</div>
+							<br>
+							<div class="media-right">
+								<button class="Btn button is-primary">
+									View Contact Details
+								</button>
+							</div>
+							<br>
+							<div>
+								<button class="delete"></button>
+							</div>
 			    </article>
 			</div>
 		</div>
-		<div class="RSVPMaybeList">
+		<div class="RSVPMaybeList" ng-repeat="maybeGuest in vm.maybeGuests track by $index">
 			<p class="maybe animated fadeInRight">
 			Maybe
 			</p>
@@ -125,18 +219,56 @@
 			    <article class="media animated fadeInRight">
 			      	<div class="media-content">
 				        <div class="content">
-				          <p>
-				            <strong>John Smith</strong> <small>john@johnsmith.com</small> <small>31m</small>
-				            <br>
-				            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-				          </p>
+									<strong>{{maybeGuest.first_name}} {{maybeGuest.last_name}}</strong> <small>{{maybeGuest.email}}</small>
+									<br>
+									Mobile Number: {{maybeGuest.mobile_number}}
+									<br>
+									Home Number: {{maybeGuest.home_number}}
+								</p>
 				        </div>
 			      	</div>
-			      	<div class="media-right">
-			        	<button class="delete"></button>
-			      	</div>
+							<br>
+							<div class="media-right">
+								<button class="Btn button is-primary">
+									View Contact Details
+								</button>
+							</div>
+							<br>
+							<div>
+								<button class="delete"></button>
+							</div>
 			    </article>
 			</div>
 		</div>
+		<div class="RSVPNotRespondedList" ng-repeat="nrGuest in vm.nrGuests track by $index">
+			<p class="notresponded animated fadeInRight">
+			Not Responded
+			</p>
+			<div class="contactContainer">
+			    <article class="media animated fadeInRight">
+			      	<div class="media-content">
+				        <div class="content">
+									<strong>{{nrGuest.first_name}} {{nrGuest.last_name}}</strong> <small>{{nrGuest.email}}</small>
+									<br>
+									Mobile Number: {{nrGuest.mobile_number}}
+									<br>
+									Home Number: {{nrGuest.home_number}}
+								</p>
+				        </div>
+			      	</div>
+							<br>
+							<div class="media-right">
+								<button class="Btn button is-primary">
+									View Contact Details
+								</button>
+							</div>
+							<br>
+							<div>
+								<button class="delete"></button>
+							</div>
+			    </article>
+			</div>
+		</div>
+
 	</div>
 </div>
