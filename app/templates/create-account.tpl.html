@@ -2,79 +2,67 @@
 
   <form ng-submit="vm.createAccount(user)">
 
-   <h3>Account Details:</h3>
-        <label>
+    <div class="createAcntWrapper1">
+     <h3>Account Details:</h3>
+        <label class="createLabelAnim">
           <input type="text"
+                 class="createInputAnim" 
                  ng-model="user.first_name"
                  required>
           <div class="label-text">First Name:</div>
         </label>
-        <label>
+        <label class="createLabelAnim">
           <input type="text"
+                 class="createInputAnim"
                  ng-model="user.last_name" required>
           <div class="label-text">Last Name:</div>
         </label>
-        <label>
+        <label class="createLabelAnim">
           <input type="text"
+                 class="createInputAnim"
                  ng-model="user.email" required>
           <div class="label-text">Email:</div>
                <!--  <span class="help is-danger">This email is invalid</span> -->
         </label>
-        <label>
+        <label class="createLabelAnim">
           <input type="password"
+                 class="createInputAnim"
                  ng-model="user.password" required>
           <div class="label-text">Password:</div>
         </label>
         <br>
+    </div>
 
-<!--     <p class="control has-icon has-icon-left">
-      <input class="input" type="text" ng-model="user.first_name" placeholder="First Name">
-        <i class="fa fa-user" aria-hidden="true"></i>
-    </p> -->
-
-<!--     <p class="control has-icon has-icon-left">
-      <input class="input" type="text" ng-model="user.last_name" placeholder="Last Name">
-        <i class="fa fa-user" aria-hidden="true"></i>
-    </p> -->
-
- <!--    <p class="control has-icon has-icon-left">
-      <input class="input is-danger" type="text" ng-model="user.email" placeholder="jsmith@gmail.com" value="" required>
-        <i class="fa fa-envelope" aria-hidden="true"></i>
-      <i class="fa fa-warning"></i>
-      <span class="help is-danger">This email is invalid</span>
-    </p> -->
-
-<!--     <p class="control has-icon has-icon-left">
-      <input class="input is-danger" type="password" ng-model="user.password" placeholder="Password" value="" required>
-        <i class="fa fa-key" aria-hidden="true"></i>
-      <i class="fa fa-warning"></i>
-      <span class="help is-danger">This password is invalid</span>
-    </p> -->
-
-    <br>
+    <div class="createAcntWrapper2">
       <h3>Personal Details:</h3>
-       <label>
+       <label class="createLabelAnim">
           <input type="tel"
+                 class="createInputAnim"
                  ng-model="user.home_number">
           <div class="label-text">Home phone:</div>
         </label>
-       <label>
+       <label class="createLabelAnim">
           <input type="tel"
+                 class="createInputAnim"
                  ng-model="user.mobile_number">
           <div class="label-text">Mobile phone:</div>
         </label>
-       <label>
+       <label class="createLabelAnim">
           <input type="text"
+                 class="createInputAnim"
                  ng-model="user.street">
           <div class="label-text">Address:</div>
         </label>
-       <label>
+       <label class="createLabelAnim">
           <input type="text"
+                 class="createInputAnim"
                  ng-model="user.street_2">
           <div class="label-text">Address-alt:</div>
         </label>
-       <label>
-          <input type="text" ng-model="user.city">
+       <label class="createLabelAnim">
+          <input type="text"
+                 class="createInputAnim" 
+                 ng-model="user.city">
           <div class="label-text">City:</div>
         </label>
         <br>
@@ -133,48 +121,49 @@
         <option value="WY">Wyoming</option>
       </select>
 
-      <label>
+      <label class="createLabelAnim">
           <input type="text"
+                 class="createInputAnim"
                  ng-model="user.post_code">
           <div class="label-text">zip:</div>
         </label>
-        <br>
-        <br>
-
-        <h3>Organization Details:</h3>
-      <label>
-          <input type="text" 
-                 ng-model="user.organization"
-                 required>
-          <div class="label-text">Organization Name:</div>
-      </label>
-
-        <select ng-model="user.category">
-          <option>Nonprofit</option>
-          <option>For Profit</option>
-          <option>Hospital</option>
-          <option>Education</option>
-          <option>Arts</option>
-        </select>
-      <br>
-      <br>
-
-    <div class="photoUploadBox">
-      <label class="photo-label"
-             ng-click="vm.uploadImage()">Profile photo: </label>
-      <a class="button is-primary is-outlined"
-         ng-click="vm.uploadImage()">Upload Image</a>
     </div>
-    <br>
-    <br>
 
-    <p class="control">
+    <div class="createAcntWrapper3">
+        <h3>Organization Details:</h3>
+        <label class="createLabelAnim">
+            <input type="text"
+                   class="createInputAnim" 
+                   ng-model="user.organization"
+                   required>
+            <div class="label-text">Organization Name:</div>
+        </label>
+
+          <select ng-model="user.category">
+            <option>Nonprofit</option>
+            <option>For Profit</option>
+            <option>Hospital</option>
+            <option>Education</option>
+            <option>Arts</option>
+          </select>
+        <br>
+        <br>
+
+      <div class="photoUploadBox">
+        <label class="photo-label"
+               ng-click="vm.uploadImage()">Profile photo: </label>
+        <a class="button is-primary is-outlined"
+           ng-click="vm.uploadImage()">Upload Image</a>
+      </div>
+    </div>
+
+<!--     <p class="control">
       <label class="checkbox">
         <input type="checkbox">
         Remember me
       </label>
-    </p>
-    <br>
+    </p> -->
+
 
     <p class="control">
       <button type="submit"

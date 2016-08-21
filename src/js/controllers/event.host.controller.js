@@ -35,6 +35,8 @@ function EventHostController (MailService, $state, $http, SERVER, $cookies, $sta
 
 	    $http.get(SERVER.URL + 'host/my-events/' + eventID, config).then((res) => {
 
+				// forEaches through the EventGuest info and counts the
+				// RSVP status of each EventGuest and a total invite count.
 				let rsvpInfo = res.data.rsvpInfo;
 				rsvpInfo.forEach(function(data, i){
 		      if(data.rsvp === "Yes"){
@@ -52,20 +54,25 @@ function EventHostController (MailService, $state, $http, SERVER, $cookies, $sta
 		        vm.rsvp.invites++;
 		      }
 		    });
+
+				// forEaches through the Guest info and adds the
+				// RSVP status to each respective Guest.
 				 res.data.allGuests.forEach(function(guest, i){
 					guest.rsvpInfo = res.data.rsvpInfo[i].rsvp;
 				});
 
-					// Attempt at solving with lodash groupBy
-					// var  = _.groupBy(res.data.allGuests, res.data.allGuests.rsvpInfo);
-
-					res.data.allGuests.forEach(function(guest, i){
+					// Sorts the Guests into different arrays based on their RSVP status
+					res.data.allGuests.forEach(function(guest){
 						if (guest.rsvpInfo === "Yes"){vm.yesGuests.push(guest);
 						} else if (guest.rsvpInfo === "No"){vm.noGuests.push(guest);
 						} else if (guest.rsvpInfo === "Maybe"){vm.maybeGuests.push(guest);
 						} else if (guest.rsvpInfo === "Not responded"){vm.nrGuests.push(guest);
 					};
 				});
+
+				// Attempt at solving the previous with lodash groupBy
+				// var  = _.groupBy(res.data.allGuests, res.data.allGuests.rsvpInfo);
+
 					vm.event = res.data;
 	    });
 
@@ -103,6 +110,8 @@ function EventHostController (MailService, $state, $http, SERVER, $cookies, $sta
 		vm.inviteMyContacts=false;
 	}
 
+// First step of the process kicked off by the sendInvite function
+// this has the backend create the guest in the guest table
 function createGuest(guestInfo){
 				let guestInstance = guestInfo;
 				let token = $cookies.get('access_token');
@@ -127,6 +136,8 @@ function createGuest(guestInfo){
 						});
 }
 
+// Second step of the process kicked off by the sendInvite function
+// this has the backend create the eventguest in the eventguest join table
 function createEventGuest(guestInfo, guestInstance){
       let token = $cookies.get('access_token');
       let config = {
@@ -147,6 +158,9 @@ function createEventGuest(guestInfo, guestInstance){
 		});
   };
 
+
+// Third step of the process kicked off by the sendInvite function
+// this composes the email that will go out to the guest via the MailGun service.
 function emailGuest(egInfo, guestInstance){
 	let guestInfo = guestInstance.first_name + " " + guestInstance.last_name + " " + '<' + guestInstance.email + '>';
 	let eventURL = "http://localhost:8081/#/event-guest/rsvp/" + egInfo.uuid;
@@ -160,10 +174,16 @@ function emailGuest(egInfo, guestInstance){
 		MailService.sendEmail(data);
 }
 
+// This function kicks off several steps neede to create the guest and send them an email.
 	function sendInvite(guest){
-		//check validation of email against eventguest table
+		//Should probably check validation of email against eventguest table to avoid duplicate invites
+		//Calls first step of sendInvite -> creating the guest
 		createGuest(guest);
 		$state.reload('root.host.eventHost');
+	}
+
+	function eventDetails(eventID) {
+		$location.url('host/my-events/' + eventID);
 	}
 
 }

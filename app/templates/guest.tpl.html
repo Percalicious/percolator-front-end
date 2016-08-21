@@ -1,42 +1,42 @@
 <div class="guestPage">
 	<div class="guestStatsBox animateDown fadeInDown">
 		<div class="personalInfoWrapper">
-			<h3 class="infoHeader">Personal Info:</h3>
+			<h3 class="guestPage infoHeader">Personal Info:</h3>
 			<div class="statInfoWrapper">
 				<div class="statInfo">
 				{{vm.profile.fullname}}
 				</div>
-				<span class="statLabel">Full Name</span>
+				<span class="guestPage statLabel">Full Name</span>
 			</div>
 			<div class="statInfoWrapper">
 				<div class="statInfo maritalInfo">
 				{{vm.profile.email}}
 				</div>
-				<span class="statLabel">Email</span>
+				<span class="guestPage statLabel">Email</span>
 			</div>
 			<div class="statInfoWrapper">
 				<div class="statInfo">
 				{{vm.profile.kids}}
 				</div>
-				<span class="statLabel">Has Kids</span>
+				<span class="guestPage statLabel">Has Kids</span>
 			</div>
 			<div class="statInfoWrapper">
 				<div class="statInfo">
 				{{vm.profile.spouseName}}
 				</div>
-				<span class="statLabel">Spouse Name</span>
+				<span class="guestPage statLabel">Spouse Name</span>
 			</div>
 			<div class="statInfoWrapper">
 				<div class="statInfo">
 					{{vm.profile.age}}
 				</div>
-				<span class="statLabel">Age</span>
+				<span class="guestPage statLabel">Age</span>
 			</div>
 			<div class="statInfoWrapper">
 				<div class="statInfo">
 					{{vm.profile.city}}, {{vm.profile.state}}
 				</div>
-				<span class="statLabel">Lives In</span>
+				<span class="guestPage statLabel">Lives In</span>
 			</div>
 		</div>
 		<div class="dividerDiv">
@@ -45,95 +45,95 @@
 			<div class="accredited" ng-show="vm.profile.accreditedInvestor">
 				Accredited Investor
 			</div>		
-			<h3 class="infoHeader">Job Info:</h3>
+			<h3 class="guestPage infoHeader">Job Info:</h3>
 				<div class="statInfoWrapper">
 					<div class="statInfo">
 					{{vm.profile.coname1}}
 					</div>
-					<span class="statLabel">Company 1 Name</span>
+					<span class="guestPage statLabel">Company 1 Name</span>
 				</div>
 				<div class="statInfoWrapper">
 					<div class="statInfo maritalInfo">
 					{{vm.profile.title1}}
 					</div>
-					<span class="statLabel">Title</span>
+					<span class="guestPage statLabel">Title</span>
 				</div>
 				<div class="statInfoWrapper">
 					<div class="statInfo">
 					{{vm.profile.coname2}}
 					</div>
-					<span class="statLabel">Company 2 Name</span>
+					<span class="guestPage statLabel">Company 2 Name</span>
 				</div>
 				<div class="statInfoWrapper">
 					<div class="statInfo maritalInfo">
 					{{vm.profile.title2}}
 					</div>
-					<span class="statLabel">Title</span>
+					<span class="guestPage statLabel">Title</span>
 				</div>
 		</div>
 	</div>
 	<div class=chartsContainer>
 		<div class="chartContainer">
-			<h3><span class="chartLabel">Net Worth: </span>{{vm.profile.netWorthRange}}</h3>
+			<h3 class="guestPage"><span class="guestPage chartLabel">Net Worth: </span>{{vm.profile.netWorthRange}}</h3>
 			<canvas id="netWorth" class="worthCanvas chart-doughnut"
 			  chart-data="netWorthData" chart-labels="netWorthLabels">
 			</canvas>
 
 			<div class="tierBox">
-				<p class="tierValue"><span class="chartLabel">Tier</span></p>
-				<p class="tierValue">{{vm.profile.netWorthTier}}/12</p>
+				<p class="guestPage tierValue"><span class="guestPage chartLabel">Tier</span></p>
+				<p class="guestPage tierValue">{{vm.profile.netWorthTier}}/12</p>
 			</div>
 		</div>
 		<div class="chartContainer">
-			<h3><span class="chartLabel">Cash on Hand:</span></h3>
+			<h3 class="guestPage"><span class="guestPage chartLabel">Cash on Hand:</span></h3>
 			<div class="cashOnHandBox">
 				<p>{{vm.profile.cashOnHand}}</p>
 			</div>
 		</div>
 		<div class="chartContainer">
-			<h3><span class="chartLabel">Propensity to Give (P2G) Score: </span>{{vm.profile.p2GText}}</h3>
+			<h3 class="guestPage"><span class="guestPage chartLabel">Propensity to Give (P2G) Score: </span>{{vm.profile.p2GText}}</h3>
 			<canvas id="p2G" class="p2GCanvas chart-pie"
 			  chart-data="p2GData" chart-labels="p2GLabels" >
 			</canvas>
 		</div>
 		<div class="chartContainer">
-			<h3><span class="chartLabel">Gift Capacity: </span>{{vm.profile.giftCapacity}}</h3>
+			<h3 class="guestPage"><span class="guestPagechartLabel">Gift Capacity: </span>{{vm.profile.giftCapacity}}</h3>
 			<canvas id="giftCapacity" class="giftCapacityCanvas chart-doughnut"
 			  		chart-data="giftCapacityData" chart-labels="giftCapacityLabels" >
 			</canvas>
 			<div class="tierBox">
-				<p class="tierValue"><span class="chartLabel">Tier</span></p>
-				<p class="tierValue">{{vm.profile.giftCapacityTier}}/20</p>
+				<p class="guestPage tierValue"><span class="guestPage chartLabel">Tier</span></p>
+				<p class="guestPage tierValue">{{vm.profile.giftCapacityTier}}/20</p>
 			</div>
 		</div>
 		<div class="chartContainer">
-			<h3><span class="chartLabel">Income: </span>{{vm.profile.incomeRange}}</h3>
+			<h3 class="guestPage"><span class="guestPagechartLabel">Income: </span>{{vm.profile.incomeRange}}</h3>
 				<canvas id="income" class="incomeCanvas chart-doughnut"
 				  		chart-data="incomeData" chart-labels="incomeLabels" >
 				</canvas>
 			<div class="tierBox">
-				<p class="tierValue"><span class="chartLabel">Tier</span></p>
-				<p class="tierValue">{{vm.profile.incomeTier}}/6</p>
+				<p class="guestPage tierValue"><span class="guestPage chartLabel">Tier</span></p>
+				<p class="guestPage tierValue">{{vm.profile.incomeTier}}/6</p>
 			</div>
 		</div>
 		<div class="chartContainer">
-			<h3><span class="chartLabel">Real Estate Value: </span>{{vm.profile.realEstateTotalVal}}</h3>
+			<h3 class="guestPage"><span class="guestPage chartLabel">Real Estate Value: </span>{{vm.profile.realEstateTotalVal}}</h3>
 				<canvas id="realEstate" class="realEstateCanvas chart-doughnut"
 				  chart-data="realEstateData" chart-labels="realEstateLabels" >
 				</canvas>
 			<div class="tierBox">
-				<p class="tierValue"><span class="chartLabel">Tier</span></p>
-				<p class="tierValue">{{vm.profile.realEstateTier}}/8</p>
+				<p class="guestPage tierValue"><span class="guestPage chartLabel">Tier</span></p>
+				<p class="guestPage tierValue">{{vm.profile.realEstateTier}}/8</p>
 			</div>
 		</div>			
 	</div>
 	<div class="detailsBox">
-		<h3><span class="chartLabel">Properties Owned:  </span> {{vm.profile.numberRealEstateProperties}}</h3>
-		<h3><span class="chartLabel">Business Ownership:  </span>{{vm.profile.businessOwnership}}</h3>
-		<h3><span class="chartLabel">Business Sales Volume:  </span>{{vm.profile.businessSalesVolume}}</h3>
-		<h3><span class="chartLabel">Influence Rating:  </span>{{vm.profile.influenceRating}}</h3>
-		<h3><span class="chartLabel">Total Stock:  </span>{{vm.profile.totalStock}}</h3>
-		<h3><span class="chartLabel">Total Pensions:  </span>{{vm.profile.totalPensions}}</h3>
-		<h3><span class="chartLabel">Investable Assets:  </span>{{vm.profile.investableAssets}}</h3>
+		<h3 class="guestPage"><span class="guestPage chartLabel">Properties Owned:  </span> {{vm.profile.numberRealEstateProperties}}</h3>
+		<h3 class="guestPage"><span class="guestPage chartLabel">Business Ownership:  </span>{{vm.profile.businessOwnership}}</h3>
+		<h3 class="guestPage"><span class="guestPage chartLabel">Business Sales Volume:  </span>{{vm.profile.businessSalesVolume}}</h3>
+		<h3 class="guestPage"><span class="guestPage chartLabel">Influence Rating:  </span>{{vm.profile.influenceRating}}</h3>
+		<h3 class="guestPage"><span class="guestPage chartLabel">Total Stock:  </span>{{vm.profile.totalStock}}</h3>
+		<h3 class="guestPage"><span class="guestPage chartLabel">Total Pensions:  </span>{{vm.profile.totalPensions}}</h3>
+		<h3 class="guestPage"><span class="guestPage chartLabel">Investable Assets:  </span>{{vm.profile.investableAssets}}</h3>
 	</div>
 </div>

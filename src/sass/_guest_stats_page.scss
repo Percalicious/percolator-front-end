@@ -7,15 +7,21 @@ $green: #84DB2E;
 
 
 @media screen and (max-width: 1000px){
-	h3{
+	.guestPage{
 		font-size: 18px !important;
 	}
+
 	p{
 		font-size: 18px !important;
 	}
-	span{
+	.chartLabel{
+	font-size: 18px !important;	
+	}
+
+	.cashOnHandBox p {
 		font-size: 18px !important;
 	}
+
 	.statInfo {
 		font-size: 15px !important;
 		justify-content: flex-start !important;
@@ -27,15 +33,15 @@ $green: #84DB2E;
 }
 
 @media screen and (max-width: 750px){
-	h3{
+	.guestPage{
 		font-size: 16px !important;
 	}
-	p{
+	.cashOnHandBox p {
 		font-size: 16px !important;
 	}
-	span{
+	.chartLabel{
 		font-size: 16px !important;
-	}
+	}	
 	.statInfo {
 		font-size: 13px !important;
 		justify-content: flex-start !important;
@@ -47,6 +53,12 @@ $green: #84DB2E;
 }
 
 @media screen and (max-width: 500px){
+	h3{
+		font-size: 12px !important;
+	}
+	.chartLabel{
+		font-size: 12px !important;
+	}
 	.guestStatsBox{
 		display: flex;
 		flex-direction: column;

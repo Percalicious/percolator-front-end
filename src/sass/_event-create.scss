@@ -2,6 +2,7 @@ $coffeewhite: #fff4e6;
 $orange:  #e78200;
 $brown: #673A00;
 $darkorange: #F44B0C;
+$lightbrown: #804800;
 
 h3 {
     text-align: left;
@@ -9,55 +10,85 @@ h3 {
     font-size: 2.5vw !important;
 }
 
+.createEventPage {
+  // border: solid black 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
 
-.animated { 
-   -webkit-animation-duration: 1s; 
-   animation-duration: 1s; 
-   -webkit-animation-fill-mode: both; 
-   animation-fill-mode: both; 
-} 
+.createUpperRow {
+  display: flex;
+  // align-items: center;
+  flex-direction: row;
+}
+.createEventForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $coffeewhite;
+  // width: 80vw;
+  // margin-top: 3vw;
+  // margin-bottom: 3vw;
+  border-radius: 10px;
+  padding: 3vw;
+  box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+}
 
-@-webkit-keyframes fadeInRight { 
-    0% { 
-        opacity: 0; 
-        -webkit-transform: translateX(20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        -webkit-transform: translateX(0); 
-    } 
-} 
-@keyframes fadeInRight { 
-    0% { 
-        opacity: 0; 
-        transform: translateX(20px); 
-    } 
-    100% { 
-        opacity: 1; 
-        transform: translateX(0); 
-    } 
-} 
-.fadeInRight { 
-    -webkit-animation-name: fadeInRight; 
-    animation-name: fadeInRight; 
+.eventWrapper1 {
+  // border: solid blue 1px;
+  border-right: solid $brown 1px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 27vw;
+  padding: 1vw;
+}
+
+.eventWrapper2 {
+  // border: solid blue 1px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 27vw;
+   padding: 1vw;
+}
+
+.eventWrapper3 {
+  // border: solid blue 1px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 27vw;
+  padding: 1vw;
+}
+.eventWrapper4 {
+  // border: solid blue 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vw;
+  // width: 50vw;
 }
 
 // .label-text {
 // border: solid red 1px;
 // }
 
-label {
-  display: block;
-  letter-spacing: 4px;
-  // padding-top: 30px;
-  text-align: center;
-}
+// label {
+//   display: block;
+//   letter-spacing: 4px;
+//   // padding-top: 30px;
+//   text-align: center;
+// }
+
 label .label-text {
   margin: 0px;
   color: $brown;
   // text-shadow:0px 1px 0px #CFCFCF;
   cursor: text;
-  font-size: 1vw;
+  font-size: 1.4vw;
   // padding-bottom: 1vw;
   // line-height: 20px;
   // text-transform: uppercase;
@@ -81,64 +112,62 @@ label input {
   // width: 30vw;
 }
 label input:focus {
-  width: 40vw;
+  width: 24vw;
 }
 label input:focus + .label-text {
   color: $darkorange;
   margin: 0px;
-  font-size: 1.5vw;
-  -moz-transform: translateX(-7vw);
-  -ms-transform: translateX(-7vw);
-  -webkit-transform: translateX(-7vw);
-  transform: translateX(-7vw);
+  font-size: 1.6vw;
+  -moz-transform: translateX(0vw);
+  -ms-transform: translateX(0vw);
+  -webkit-transform: translateX(0vw);
+  transform: translateX(0vw);
+  transition: all 0.3s;
 }
 label input:valid + .label-text {
     margin-left: 4vw;
-    font-size: 1vw;
-    -moz-transform: translate(-0vw, 0vw);
-    -webkit-transform: translate(-0vw, 0vw);
-    -o-transform: translate(-0vw, 0vw);
-    -ms-transform: translate(-0vw, 0vw);
-    transform: translate(-0vw, 0vw);
+    font-size: 1.4vw;
+    -moz-transform: translate(-2vw, 0vw);
+    -webkit-transform: translate(-2vw, 0vw);
+    -o-transform: translate(-2vw, 0vw);
+    -ms-transform: translate(-2vw, 0vw);
+    transform: translate(-2vw, 0vw);
     text-align: left;
+    transition: all 0.5s;
 }
 
-.select {
-    background: none !important;
+select {
+    background: none;
     outline: none;
     color: $orange;
     border: solid $orange 1px;
+    width: 20vw;
 }
 
 textarea {
     background: none !important; 
     border: solid $orange 1px;
     outline: none;
-    width: 40vw;
+    width: 26vw;
     height: 10vw; 
     color: $orange; 
 }
 
-// .checkbox {
+
+// .checkBoxWrapper {
+//     border: solid red 1px;
+//     display: flex;
+//     flex-direction: column;
+//     text-align: left;
 //     transform: translate(0vw, 0vw) !important;
 //     font-size: 2vw !important;
-//     text-align: center !important;
 // }
 
-.checkBoxWrapper {
-    border: solid red 1px;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    transform: translate(0vw, 0vw) !important;
-    font-size: 2vw !important;
-}
-
-.perPlateBox {
-    // border: solid red 1px;
-    display: flex;
-    justify-content: center;
-}
+// .perPlateBox {
+//     // border: solid red 1px;
+//     display: flex;
+//     justify-content: center;
+// }
 
 .photoUploadBox {
   // border: solid red 1px;
@@ -147,4 +176,41 @@ textarea {
   align-items: center;
   color: $brown;
   font-size: 2vw;
+}
+
+
+// ===============animation=============
+.animateDown { 
+   -webkit-animation-duration: 2s; 
+   animation-duration: 2s; 
+   -webkit-animation-fill-mode: both; 
+   animation-fill-mode: both; 
+} 
+
+@-webkit-keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+.fadeInDown { 
+    -webkit-animation-name: fadeInDown; 
+    animation-name: fadeInDown; 
+
 }

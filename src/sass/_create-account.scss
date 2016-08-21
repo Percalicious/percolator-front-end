@@ -6,17 +6,28 @@ $lightbrown: #804800;
 
 
 .creatAccountBox {
-    // border: solid $orange 1px;
+    border: solid $orange 1px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     width: 70vw;
     margin: 3vw;
     padding: 5vw;
     border-radius: 10px;
     background: $coffeewhite;
-    background-size: cover;
     box-shadow: 1px 1px 7px 0px rgba(194, 194, 194, 0.37);
+}
+
+.createAcntWrapper1 {
+    border: solid green 1px;
+}
+
+.createAcntWrapper2 {
+    border: solid green 1px;
+}
+
+.createAcntWrapper3 {
+    border: solid green 1px;
 }
 
 // h3 {
