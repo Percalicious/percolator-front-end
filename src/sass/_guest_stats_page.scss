@@ -125,13 +125,19 @@ $green: #84DB2E;
 	justify-content: center;
 }
 
+.chartBigBox{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .chartContainer{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	position: relative;
-	margin: 3vw;
+    margin-bottom: 54px;
 	width: 24vw;
 	min-width: 306px;
 	min-height: 168px;
@@ -146,8 +152,15 @@ $green: #84DB2E;
     color: $orange;	
 }
 .tierBox{
-    position: absolute;
-    top: 55%;
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 306px;
+	height: 153px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .tierValue{
@@ -199,11 +212,9 @@ $green: #84DB2E;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2vw;
-    width: 14vw;
-    height: 14vw;
-    min-width: 160px;
-    min-height: 160px;
+    margin-top: 34px;
+    width: 150px;
+    height: 150px;
 	p{
 		color: $orange;
 		text-align: center;
@@ -221,9 +232,6 @@ $green: #84DB2E;
 @media screen and (max-width: 960px){
 	.guestPage{
 		font-size: 18px !important;
-	}
-	.tierBox{
-		top: 47% !important;
 	}
 
 	.chartLabel{
